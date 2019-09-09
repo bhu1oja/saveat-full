@@ -1,0 +1,20 @@
+<%- include('../_includes/header') %>
+
+<div class="container-fluid">
+  <form action="/category-edit/<%= category.id %>" method="POST">
+    <div class="form-group">
+      <label for="productmarketprice"> Category</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        placeholder="Vehicle name"
+        value="<%= category.name %>"
+        required
+      />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+  <%- include('../_includes/footer') %>
+</div>

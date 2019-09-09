@@ -1,0 +1,29 @@
+<%- include('../_includes/header') %>
+
+<div class="container-fluid">
+  <form action="/category-add" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="productmarketprice"> Category</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        placeholder="Category name "
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="productmarketprice"> Category Image</label>
+      <input
+        type="file"
+        class="form-control"
+        name="categoryImage"
+        placeholder="Category Image "
+        required
+      />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+  <%- include('../_includes/footer') %>
+</div>

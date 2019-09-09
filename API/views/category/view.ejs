@@ -1,0 +1,61 @@
+<%- include('../_includes/header') %>
+
+<div class="container-fluid">
+  <div class="row  p-3">
+    <h2>View Product</h2>
+    <button type="submit" name="btn_add" class="btn  ml-8" value=">">
+      <a href="/category-add/">Add new</a>
+    </button>
+  </div>
+
+  <% if (count > 0) { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Category Name</th>
+        <th>Category Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% category.forEach(cat => { %>
+      <tr>
+        <td><%= cat.name%></td>
+        <td>
+          <img
+            src="<%= cat.categoryImage%>"
+            alt="<%= cat.categoryImage%>"
+            width="42"
+            height="42"
+          />
+        </td>
+        <td>
+          <button
+            type="submit"
+            name="btn_delete"
+            class="btn btn-success"
+            value=">"
+          >
+            <a href="/category-edit/<%= cat._id %>">Edit</a>
+          </button>
+        </td>
+        <td>
+          <button
+            type="submit"
+            name="btn_delete"
+            class="btn btn-danger"
+            value=">"
+          >
+            <a href="/category-delete/<%= cat._id %>">Delete</a>
+          </button>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <% } else {%>
+  <h3 class="text-center">There are no products.</h3>
+  <% }%>
+</div>
+
+<%- include('../_includes/footer') %>
